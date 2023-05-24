@@ -76,11 +76,16 @@ class Barbarian extends RpgChar implements CanAttack, CanDefend{
     }
 }
 
-class Paladin extends RpgChar implements CanAttack, CanDefend{
+class Paladin extends RpgChar implements CanAttack, CanDefend, CanHeal{
 
     constructor(charName:string, weapon:string='sword', equipment:string='armor', gold:number=0,
                 hp:number = 30, str:number=7, mag:number=2, def:number=7){
         super(charName, weapon, equipment, gold, hp, str, mag, def)
+    }
+
+    heal():number{
+        let healAmount = this.mag + 5
+        return healAmount
     }
 }
 
